@@ -13,6 +13,23 @@
 <input type="text" id="signupUsername" placeholder="Username"><br><br>
 <input type="password" id="signupPassword" placeholder="Password"><br><br>
 
+  <h3>Choose Your Profile Emoji</h3>
+
+<div class="emoji-picker">
+
+    <span onclick="selectEmoji('🦋')">🦋</span>
+    <span onclick="selectEmoji('🌸')">🌸</span>
+    <span onclick="selectEmoji('🌙')">🌙</span>
+    <span onclick="selectEmoji('⭐')">⭐</span>
+    <span onclick="selectEmoji('🧸')">🧸</span>
+    <span onclick="selectEmoji('☁️')">☁️</span>
+    <span onclick="selectEmoji('🍄')">🍄</span>
+    <span onclick="selectEmoji('🐇')">🐇</span>
+
+</div>
+
+<p id="selectedEmoji">Selected: 🦋</p>
+
 <button onclick="signup()">Sign Up</button>
 
 <p>Already have an Account? <a href="login.html">Login</a></p>
