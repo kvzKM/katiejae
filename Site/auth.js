@@ -1,3 +1,12 @@
+let selectedEmoji = "🦋";
+
+function selectEmoji(emoji) {
+    selectedEmoji = emoji;
+
+    document.getElementById("selectedEmoji").innerHTML =
+        Selected: ${emoji};
+}
+
 function signup() {
     const username = document.getElementById("signupUsername").value;
     const password = document.getElementById("signupPassword").value;
