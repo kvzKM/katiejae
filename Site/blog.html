@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jae Hq | Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="books.html">Books</a>
+    <a href="blog.html">Blog</a>
+    <a href="youtube.html">Youtube</a>
+    <a href="travel.html">Travel</a>
+    <a href="social.html">Socials</a>
+</nav>
+
+<!-- Butterflies -->
+<div class="butterfly">🦋</div>
+<div class="butterfly">🦋</div>
+
+<h2>Blog</h2>
+
+<!-- Search bar -->
+
+<input 
+    type="text"
+	id="searchInput"
+	placeholder="Search posts..."
+	onkeyup="searchPosts()"
+>
+
+<!-- Filer bar -->
+
+<div class="filter-bar">
+   <button onclick="filterPosts('all')">All</button>
+   <button onclick="filterPosts('life')">life</button>
+   <button onclick="filterPosts('travel')">travel</button>
+</div>
+
+
+<!-- THIS is where JS will load posts -->
+<div class="blog-container"></div>
+
+
+<!-- Scripts MUST be at the bottom -->
+<script src="posts.js"></script>
+<script src="blog.js"></script>
+
+</body>
+</html>

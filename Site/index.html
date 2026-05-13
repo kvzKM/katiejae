@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+<!--------Navigation---------->
+<nav>
+    <a href="index.html">Home</a>
+	<a href="books.html">Books</a>
+	<a href="blog.html">Blog</a>
+	<a href="youtube.html">Youtube</a>
+	<a href="travel.html">Travel</a>
+	<a href="social.html">Socials</a>
+</nav>
+
+
+<head>
+<title>Jae Hq</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+ <div class="butterfly">🦋</div>
+ <div class="butterfly">🦋</div>
+ 
+ 
+ <div id="user-info"></div>
+
+<script>
+    const user = localStorage.getItem("loggedInUser");
+
+    if (user) {
+        document.getElementById("user-info").innerHTML = `
+            <p>Welcome, ${user} 👋</p>
+            <button onclick="logout()">Logout</button>
+        `;
+    }
+	
+	
+	function logout() {
+    localStorage.removeItem("loggedInUser");
+    location.reload();
+}
+</script>
+
+   <h1>Welcome to my website</h1>
+   
+   <p> Hi, my name is Katie but you can call me Jae. This site is mostly to show you guys all a little bit of my self and what I like to do online.</p>
+   
+   <hr>
+   
+   <h2 id="about"> About me </h2>
+   
+   <p>I am many things. An author, a gamer, a motorsport enthusiast and a little bit of a travel freak.</p>
+   
+
+</body>
+
+</html>

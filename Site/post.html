@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Blog Post</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="blog.html">Blog</a>
+</nav>
+
+<!---------Post Content--------->
+
+<div id="post-content"></div>
+
+<script src="posts.js"></script>
+
+<script>
+    const index = localStorage.getItem("selectedPost");
+    const post = posts[index];
+
+    const container = document.getElementById("post-content");
+
+    container.innerHTML = `
+        <h1>${post.title}</h1>
+        <p class="date">${post.date}</p>
+        <p class="tags">#${post.tags.join(" #")}</p>
+        <img src="${post.image}" style="width:60%; border-radius:15px;">
+        <p>${post.content}</p>
+    `;
+</script>
+
+<!---------Comment Section------>
+
+<h2>Comments</h2>
+
+<div id="comments-section"> 
+  <div id="comments-list"></div>
+  
+  <textarea id="commentInput" placeholder="Write a comment..."></textarea>
+  <br>
+  <button onclick="addComment()">Post Comment</button>
+  
+  <p id="login-warning"></p>
+  
+  
+</div>
+
+
+<script>
+
+
+const user = localStorage.getItem("loggedInUser");
+ 
+ if (!user) {
+    document.getElementById("login-warning").innerHTML =
+    "You must be Logged in to comment.";	
+ }
+// Comment Section
+
+const commentsList = document.getElementById("comments-list");	
+
+function loadComments() {
+    const postIndex = localStorage.getItem("selectedPost");
+    const comments = JSON.parse(localStorage.getItem("comments_" + postIndex)) || [];
+    const currentUser = localStorage.getItem("loggedInUser");
+
+    const commentsList = document.getElementById("comments-list");
+    commentsList.innerHTML = "";
+
+    comments.forEach((comment, index) => {
+
+        const commentDiv = document.createElement("div");
+        commentDiv.classList.add("comment");
+
+        commentDiv.innerHTML = `
+            <strong>${comment.username}</strong>
+            <p>${comment.text}</p>
+            <small>${comment.time}</small>
+        `;
+
+        // Only show delete button for own comments
+        if (comment.username === currentUser) {
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+
+            deleteBtn.onclick = function () {
+                deleteComment(index);
+            };
+
+            commentDiv.appendChild(document.createElement("br"));
+            commentDiv.appendChild(deleteBtn);
+        }
+
+        commentsList.appendChild(commentDiv);
+    });
+}
+
+
+function addComment() {
+	const input = document.getElementById("commentInput");
+	const index = localStorage.getItem("selectedPost");
+	const user = localStorage.getItem("loggedInUser");
+	
+	if (!user) {
+	   alert("You must be logged in to comment!");
+	   return;
+	};
+	
+	let comments = JSON.parse(localStorage.getItem("comments_" + index)) || [];
+	
+	const newComment= {
+	  username: user,
+	  text: input.value,
+	  time: new Date().toLocaleString()
+	};
+	
+	comments.push(newComment);
+	localStorage.setItem("comments_" + index, JSON.stringify(comments));
+	
+	input.value = "";
+	loadComments();
+}
+
+
+function deleteComment(indexToDelete) {
+  const index = localStorage.getItem("selectedPost");
+  let comments = JSON.parse(localStorage.getItem("comments_"+index)) || [];
+  
+  comments.splice(indexToDelete, 1);
+  localStorage.setItem("comments_" + index, JSON.stringify(comments));
+  
+  loadComments();
+}
+
+
+if (commentsList) {
+	loadComments();
+}
+ 
+</script>
+
+</body>
+
+</html>
