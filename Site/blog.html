@@ -1,56 +1,65 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-    <title>Jae Hq | Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jae HQ | Blog</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Navigation -->
-<nav>
-    <a href="index.html">Home</a>
-    <a href="books.html">Books</a>
-    <a href="blog.html">Blog</a>
-    <a href="youtube.html">Youtube</a>
-    <a href="travel.html">Travel</a>
-    <a href="social.html">Socials</a>
-</nav>
+    <!-- 🌐 Navigation -->
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="youtube.html">YouTube</a>
+        <a href="travel.html">Travel</a>
+        <a href="social.html">Socials</a>
+    </nav>
 
-<!-- Butterflies -->
-<div class="butterfly">🦋</div>
-<div class="butterfly">🦋</div>
+    <!-- 🦋 Ambient decoration (keep minimal, not spammy) -->
+    <div class="ambient">
+        <span class="butterfly">🦋</span>
+        <span class="butterfly">🦋</span>
+    </div>
 
-<h2>Blog</h2>
+    <!-- 📌 Page Header -->
+    <header class="page-header">
+        <h1>Blog</h1>
+        <p>Thoughts, experiments, and stories from Jae HQ.</p>
+    </header>
 
-<!-- Search bar -->
+    <!-- 🔎 Controls -->
+    <section class="controls">
 
-<input 
-    type="text"
-	id="searchInput"
-	placeholder="Search posts..."
-	onkeyup="searchPosts()"
->
+        <input 
+            type="text"
+            id="searchInput"
+            placeholder="Search posts..."
+            onkeyup="searchPosts()"
+            autocomplete="off"
+        >
 
-<!-- Filer bar -->
+        <div class="filter-bar">
+            <button onclick="filterPosts('all')">All</button>
+            <button onclick="filterPosts('life')">Life</button>
+            <button onclick="filterPosts('travel')">Travel</button>
+        </div>
 
-<div class="filter-bar">
-   <button onclick="filterPosts('all')">All</button>
-   <button onclick="filterPosts('life')">life</button>
-   <button onclick="filterPosts('travel')">travel</button>
-</div>
+    </section>
 
+    <!-- 🧠 Blog Content -->
+    <main class="blog-container" id="blogContainer">
+        <!-- JS injects posts here -->
+    </main>
 
-<!-- THIS is where JS will load posts -->
-<div class="blog-container"></div>
-
-
-<!-- Scripts MUST be at the bottom -->
-<script src="posts.js"></script>
-<script src="blog.js"></script>
-	<script type="module" src="auth.js"></script>
+    <!-- ⚙️ Scripts -->
+    <script src="posts.js" defer></script>
+    <script src="blog.js" defer></script>
+    <script type="module" src="auth.js"></script>
 
 </body>
 </html>
