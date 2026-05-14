@@ -38,6 +38,7 @@ body {
     min-height: 100vh;
     padding: 20px;
     overflow-x: hidden;
+   text-align: center;
 }
 /* =========================================
    UNIVERSAL LAYOUT SYSTEM
