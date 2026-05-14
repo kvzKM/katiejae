@@ -1,29 +1,32 @@
-```css
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap');
 
 
-/* =========================
-   GLOBAL
-========================= */
-
-html {
-    scroll-behavior: smooth;
-}
+/* =========================================
+   ROOT VARIABLES
+========================================= */
 
 :root {
 
-    --main-bg: #f5dfec;
+    --bg-dark: #070b14;
+    --bg-secondary: #111827;
 
-    --primary: #d6b3ff;
-    --secondary: #ffcce6;
-    --accent: #cceeff;
+    --neon-pink: #ff4fd8;
+    --neon-blue: #44e9ff;
+    --neon-purple: #9d4dff;
 
-    --text: #333;
+    --glass-bg: rgba(255,255,255,0.06);
 
-    --glass-bg: rgba(255, 255, 255, 0.25);
-    --glass-border: rgba(255, 255, 255, 0.3);
+    --text-main: #f5f5f5;
+    --text-soft: #b8c1d9;
+
+    --border-glow: rgba(68,233,255,0.25);
 
 }
+
+
+/* =========================================
+   GLOBAL
+========================================= */
 
 * {
     margin: 0;
@@ -31,121 +34,85 @@ html {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
 
     font-family: 'Poppins', sans-serif;
 
-    background-image: linear-gradient(
-        90deg,
-        #f5dfec,
-        #e2d0f5,
-        #edfaca
-    );
+    background:
+        radial-gradient(circle at top left,
+        rgba(157,77,255,0.2),
+        transparent 30%),
 
-    background-size: 300% 300%;
+        radial-gradient(circle at bottom right,
+        rgba(255,79,216,0.2),
+        transparent 30%),
 
-    animation: shiftGradient 8s ease infinite;
+        var(--bg-dark);
 
-    color: var(--text);
-
-    text-align: center;
+    color: var(--text-main);
 
     min-height: 100vh;
 
     padding: 20px;
-}
 
-@keyframes shiftGradient {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-
+    overflow-x: hidden;
 }
 
 
-/* =========================
+/* =========================================
    TYPOGRAPHY
-========================= */
+========================================= */
+
+h1, h2, h3 {
+
+    font-family: 'Orbitron', sans-serif;
+
+    letter-spacing: 2px;
+
+}
 
 h1 {
 
-    color: var(--primary);
-
-    font-size: 48px;
+    font-size: 56px;
 
     margin-bottom: 20px;
+
+    color: var(--neon-blue);
+
+    text-shadow:
+        0 0 10px var(--neon-blue),
+        0 0 30px var(--neon-blue);
+
 }
 
 h2 {
 
-    color: var(--primary);
+    color: var(--neon-pink);
 
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
-    font-size: 32px;
-}
-
-h3 {
-
-    color: var(--text);
-
-    margin-bottom: 10px;
 }
 
 p {
 
+    color: var(--text-soft);
+
+    line-height: 1.8;
+
     max-width: 700px;
 
-    margin: 10px auto;
+    margin: auto;
 
-    line-height: 1.7;
-}
-
-a {
-    text-decoration: none;
-}
-
-button {
-
-    border: none;
-
-    cursor: pointer;
-
-    font-family: inherit;
-
-    transition: 0.3s ease;
 }
 
 
-/* =========================
-   SECTIONS
-========================= */
-
-section {
-    margin: 80px 0;
-}
-
-.hero {
-    margin-top: 100px;
-}
-
-.about-section {
-    margin-top: 60px;
-}
-
-
-/* =========================
+/* =========================================
    NAVBAR
-========================= */
+========================================= */
 
 nav {
 
@@ -155,18 +122,23 @@ nav {
 
     align-items: center;
 
-    padding: 18px 28px;
+    padding: 18px 30px;
 
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 
-    border-radius: 24px;
+    border-radius: 25px;
 
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--glass-bg);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border: 1px solid var(--border-glow);
+
+    box-shadow:
+        0 0 20px rgba(68,233,255,0.08);
+
 }
+
 
 .nav-left,
 .nav-right {
@@ -174,209 +146,266 @@ nav {
     display: flex;
 
     align-items: center;
-}
-
-.nav-left {
 
     gap: 20px;
+
 }
+
 
 .nav-left a {
 
-    color: var(--text);
+    text-decoration: none;
+
+    color: var(--text-main);
 
     font-weight: 500;
 
     transition: 0.3s ease;
+
+    position: relative;
+
 }
+
 
 .nav-left a:hover {
 
-    color: var(--primary);
+    color: var(--neon-blue);
 
-    transform: translateY(-2px);
+    text-shadow:
+        0 0 10px var(--neon-blue);
+
 }
 
-
-/* =========================
-   AUTH AREA
-========================= */
 
 .auth-text {
 
-    margin-right: 14px;
+    color: var(--text-soft);
 
     font-size: 14px;
 
-    opacity: 0.8;
 }
 
+
+/* =========================================
+   PROFILE BUTTON
+========================================= */
+
 .profile-area {
+
     position: relative;
+
 }
+
 
 .profile-button {
 
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
+    width: 52px;
+    height: 52px;
 
     border-radius: 50%;
 
-    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    background: linear-gradient(
-        135deg,
-        var(--primary),
-        var(--secondary)
-    );
+    text-decoration: none;
 
-    color: white;
+    font-size: 24px;
 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    background:
+        linear-gradient(
+            135deg,
+            var(--neon-purple),
+            var(--neon-blue)
+        );
+
+    box-shadow:
+        0 0 15px var(--neon-blue);
 
     transition: 0.3s ease;
+
 }
+
 
 .profile-button:hover {
 
     transform: scale(1.08);
+
+    box-shadow:
+        0 0 25px var(--neon-blue);
+
 }
 
 
-/* =========================
+/* =========================================
    PROFILE DROPDOWN
-========================= */
+========================================= */
 
 .profile-dropdown {
 
     position: absolute;
 
-    top: 60px;
+    top: 70px;
     right: 0;
 
-    width: 220px;
+    width: 230px;
 
-    padding: 18px;
+    padding: 20px;
 
-    border-radius: 18px;
+    border-radius: 20px;
 
-    background: rgba(255,255,255,0.95);
+    background: rgba(10,15,30,0.95);
 
-    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-glow);
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(16px);
 
     opacity: 0;
+
     visibility: hidden;
 
     transform: translateY(10px);
 
-    transition:
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s;
+    transition: 0.3s ease;
 
-    z-index: 1000;
+    z-index: 100;
+
 }
+
 
 .profile-area:hover .profile-dropdown {
 
     opacity: 1;
+
     visibility: visible;
 
     transform: translateY(0);
+
 }
 
-.profile-dropdown::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: -10px;
-    right: 18px;
-
-    width: 20px;
-    height: 20px;
-
-    background: rgba(255,255,255,0.95);
-
-    transform: rotate(45deg);
-}
 
 .profile-dropdown p {
 
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 
-    font-size: 14px;
+    color: var(--text-main);
+
 }
 
-.profile-dropdown button,
-.profile-dropdown a {
+
+.profile-dropdown button {
 
     width: 100%;
 
     margin-top: 10px;
 
-    padding: 10px;
+}
 
-    border-radius: 12px;
 
-    background: var(--primary);
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-weight: 600;
 
     color: white;
 
-    display: block;
+    background:
+        linear-gradient(
+            135deg,
+            var(--neon-pink),
+            var(--neon-purple)
+        );
+
+    transition: 0.3s ease;
+
 }
 
-.profile-dropdown button:hover,
-.profile-dropdown a:hover {
 
-    background: var(--secondary);
+button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 20px var(--neon-pink);
+
 }
 
 
-/* =========================
-   GLASS CARD SYSTEM
-========================= */
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+
+    margin-top: 120px;
+
+    margin-bottom: 120px;
+
+    text-align: center;
+
+}
+
+
+.hero p {
+
+    font-size: 18px;
+
+    margin-top: 20px;
+
+}
+
+
+/* =========================================
+   GLASS CARDS
+========================================= */
 
 .book-card,
 .blog-card,
 .travel-card {
 
-    width: 240px;
+    width: 260px;
 
-    padding: 16px;
+    padding: 18px;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     background: var(--glass-bg);
 
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--border-glow);
 
-    backdrop-filter: blur(8px);
-
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    backdrop-filter: blur(16px);
 
     transition: 0.3s ease;
+
 }
+
 
 .book-card:hover,
 .blog-card:hover,
 .travel-card:hover {
 
-    transform: translateY(-6px) scale(1.02);
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 25px rgba(68,233,255,0.15);
+
 }
 
 
-/* =========================
+/* =========================================
    CARD CONTAINERS
-========================= */
+========================================= */
 
 .books-container,
 .blog-container,
@@ -389,15 +418,16 @@ nav {
 
     flex-wrap: wrap;
 
-    gap: 24px;
+    gap: 25px;
 
-    margin-top: 30px;
+    margin-top: 40px;
+
 }
 
 
-/* =========================
-   CARD IMAGES
-========================= */
+/* =========================================
+   IMAGES
+========================================= */
 
 .book-card img,
 .blog-card img,
@@ -407,238 +437,92 @@ nav {
 
     border-radius: 14px;
 
-    margin-bottom: 12px;
-}
-
-.travel-card img {
-    height: 180px;
-    object-fit: cover;
 }
 
 
-/* =========================
-   CARD TEXT
-========================= */
-
-.book-card h3,
-.blog-card h3,
-.travel-card h3 {
-
-    margin-bottom: 10px;
-
-    color: #408A71;
-}
-
-.book-card p,
-.blog-card p,
-.travel-card p {
-
-    font-size: 14px;
-}
-
-.blog-card a {
-
-    color: #40826d;
-
-    font-weight: 600;
-}
-
-.blog-card a:hover {
-    color: #2e8b57;
-}
-
-
-/* =========================
-   SOCIALS
-========================= */
-
-.social-container {
-    margin-top: 30px;
-}
-
-.social-container a {
-
-    display: inline-block;
-
-    margin: 8px;
-
-    padding: 12px 20px;
-
-    border-radius: 30px;
-
-    background: var(--primary);
-
-    color: white;
-
-    transition: 0.3s ease;
-}
-
-.social-container a:hover {
-
-    background: var(--secondary);
-
-    transform: translateY(-2px);
-}
-
-
-/* =========================
-   SEARCH + FILTER
-========================= */
+/* =========================================
+   SEARCH BAR
+========================================= */
 
 #searchInput {
 
     width: 60%;
 
-    padding: 14px;
-
-    margin-bottom: 25px;
+    padding: 15px;
 
     border-radius: 30px;
 
-    border: none;
+    border: 1px solid var(--border-glow);
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
 
     outline: none;
 
-    font-size: 16px;
+    margin-bottom: 30px;
 
-    text-align: center;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-#searchInput::placeholder {
-    color: #aaa;
-}
 
-.filter-bar {
-
-    margin-bottom: 25px;
-}
+/* =========================================
+   FILTER BUTTONS
+========================================= */
 
 .filter-bar button {
 
     margin: 5px;
 
-    padding: 10px 18px;
-
-    border-radius: 25px;
-
-    background: var(--primary);
-
-    color: white;
-}
-
-.filter-bar button:hover {
-
-    background: var(--secondary);
 }
 
 
-/* =========================
-   BLOG DETAILS
-========================= */
-
-.date {
-
-    font-size: 12px;
-
-    color: gray;
-}
-
-.tags {
-
-    margin-bottom: 10px;
-
-    font-size: 12px;
-
-    color: var(--secondary);
-}
-
-
-/* =========================
+/* =========================================
    COMMENTS
-========================= */
+========================================= */
 
 #comments-section {
 
-    margin-top: 50px;
+    margin-top: 60px;
+
 }
 
-#commentInput {
-
-    width: 60%;
-
-    height: 100px;
-
-    padding: 12px;
-
-    border: none;
-
-    border-radius: 14px;
-
-    resize: none;
-
-    margin-top: 10px;
-}
-
-#comments-list {
-
-    margin-bottom: 25px;
-}
 
 .comment {
 
     width: 60%;
 
-    margin: 12px auto;
+    margin: 15px auto;
 
     padding: 15px;
 
     border-radius: 16px;
 
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid var(--border-glow);
 
     text-align: left;
+
 }
+
 
 .comment strong {
 
-    display: block;
+    color: var(--neon-blue);
 
-    margin-bottom: 6px;
-
-    color: var(--primary);
 }
+
 
 .comment small {
 
-    font-size: 11px;
+    color: #7f8db3;
 
-    color: gray;
-}
-
-.comment button {
-
-    margin-top: 10px;
-
-    padding: 6px 12px;
-
-    border-radius: 10px;
-
-    background: #ff6b6b;
-
-    color: white;
-}
-
-.comment button:hover {
-
-    background: #ff4d4d;
 }
 
 
-/* =========================
+/* =========================================
    EMOJI PICKER
-========================= */
+========================================= */
 
 .emoji-picker {
 
@@ -650,52 +534,63 @@ nav {
 
     gap: 14px;
 
-    margin: 20px 0;
+    margin: 25px 0;
+
 }
+
 
 .emoji-picker span {
 
-    font-size: 30px;
+    font-size: 34px;
 
     cursor: pointer;
 
     transition: 0.2s ease;
+
 }
+
 
 .emoji-picker span:hover {
 
     transform: scale(1.2);
+
 }
 
 
-/* =========================
+/* =========================================
    FLOATING BUTTERFLIES
-========================= */
+========================================= */
 
 .butterfly {
 
     position: fixed;
 
-    font-size: 24px;
+    font-size: 28px;
 
-    opacity: 0.7;
-
-    animation: float 6s ease-in-out infinite;
+    opacity: 0.18;
 
     pointer-events: none;
+
+    animation: float 8s ease-in-out infinite;
+
 }
+
 
 .butterfly:nth-child(1) {
 
     top: 20%;
-    left: 10%;
+    left: 8%;
+
 }
+
 
 .butterfly:nth-child(2) {
 
-    top: 60%;
+    bottom: 15%;
     right: 10%;
+
 }
+
 
 @keyframes float {
 
@@ -704,26 +599,28 @@ nav {
     }
 
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-25px);
     }
 
     100% {
         transform: translateY(0px);
     }
+
 }
 
 
-/* =========================
+/* =========================================
    RESPONSIVE
-========================= */
+========================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
     nav {
 
         flex-direction: column;
 
         gap: 20px;
+
     }
 
     .nav-left {
@@ -731,30 +628,55 @@ nav {
         flex-wrap: wrap;
 
         justify-content: center;
-    }
 
-    .hero {
-        margin-top: 50px;
     }
 
     h1 {
-        font-size: 36px;
+
+        font-size: 42px;
+
     }
 
     #searchInput,
-    #commentInput,
-.comment {
-    width: 90%;
+    .comment {
+
+        width: 90%;
+
+    }
+
 }
 
-.book-card,
-.blog-card,
-.travel-card {
-     width: 90%;
-}
 
-.auth-text {
-	display: none;
-}
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 12px;
+
+    }
+
+    nav {
+
+        padding: 18px;
+
+    }
+
+    .hero {
+
+        margin-top: 70px;
+
+    }
+
+    h1 {
+
+        font-size: 34px;
+
+    }
+
+    p {
+
+        font-size: 15px;
+
+    }
 
 }
