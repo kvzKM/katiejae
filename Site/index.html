@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Jae HQ</title>
+    <title>JAE HQ</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <!-- FLOATING BACKGROUND -->
-    <div class="butterfly">🦋</div>
-    <div class="butterfly">🦋</div>
+    <!-- ========================= -->
+    <!-- BACKGROUND ORBS -->
+    <!-- ========================= -->
+
+    <div class="glow-orb orb1"></div>
+    <div class="glow-orb orb2"></div>
+    <div class="glow-orb orb3"></div>
 
     <!-- ========================= -->
-    <!-- NAVIGATION -->
+    <!-- NAVBAR -->
     <!-- ========================= -->
 
     <nav class="navbar">
@@ -29,17 +37,22 @@
         </div>
 
         <div class="nav-links">
+
             <a href="books.html">Books</a>
             <a href="blog.html">Blog</a>
             <a href="youtube.html">YouTube</a>
             <a href="travel.html">Travel</a>
             <a href="social.html">Socials</a>
+
         </div>
 
         <div class="nav-right">
 
-            <div class="auth-text" id="authMessage">
-                Join the journey ✨
+            <div class="auth-text"
+                 id="authMessage">
+
+                 Join the dreamscape ✨
+
             </div>
 
             <div class="profile-area">
@@ -47,11 +60,12 @@
                 <a href="login.html"
                    class="profile-button"
                    id="profileButton">
-                   👤
+
+                    👤
+
                 </a>
 
-                <div class="profile-dropdown"
-                     id="profileDropdown">
+                <div class="profile-dropdown">
 
                     <p id="membershipText">
                         Membership: Dreamer
@@ -61,7 +75,7 @@
                         Reset Password
                     </button>
 
-                    <button onclick="logout()">
+                    <button onclick="logoutUser()">
                         Logout
                     </button>
 
@@ -74,164 +88,189 @@
     </nav>
 
     <!-- ========================= -->
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <!-- ========================= -->
 
-   <header class="hero">
+    <section class="hero hero-grid">
 
-    <div class="hero-left">
+        <div class="hero-left">
 
-        <p class="hero-tag">
-            ENTER THE DREAMSCAPE ✨
-        </p>
+            <p class="hero-tag">
+                ENTER THE DREAMSCAPE ✨
+            </p>
 
-        <h1>
-            BUILDING STORIES,<br>
-            SYSTEMS & WORLDS
-        </h1>
+            <h1>
+                BUILDING STORIES,<br>
+                SYSTEMS & WORLDS
+            </h1>
 
-        <p class="hero-description">
+            <p class="hero-description">
 
-            Welcome to Jae HQ —
-            a digital universe of storytelling,
-            creativity, technology,
-            travel, and futuristic ideas.
+                A futuristic universe of
+                creativity, storytelling,
+                technology, gaming,
+                travel and imagination.
 
-        </p>
+            </p>
 
-        <div class="hero-buttons">
+            <div class="hero-buttons">
 
-            <a href="blog.html">
-                <button>
-                    Explore The Blog
-                </button>
-            </a>
+                <a href="blog.html">
 
-            <a href="books.html">
-                <button class="secondary-button">
-                    Read My Stories
-                </button>
-            </a>
+                    <button>
+                        Explore Blog
+                    </button>
+
+                </a>
+
+                <a href="signup.html">
+
+                    <button class="secondary-button">
+                        Join Community
+                    </button>
+
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
+        <div class="hero-right">
 
-    <div class="hero-right">
+            <div class="hero-image-card">
 
-        <div class="hero-orb"></div>
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+                     alt="Futuristic setup">
 
-        <img
-            src="images/hero-image.png"
-            alt="Dreamscape Visual"
-            class="hero-image"
-        >
-
-    </div>
-
-</header>
-
-    <!-- ========================= -->
-    <!-- ABOUT SECTION -->
-    <!-- ========================= -->
-
-    <section class="about-section">
-
-        <div class="section-title">
-            <h2>About Me</h2>
-            <p>
-                Writer. Dreamer. Creator.
-            </p>
-        </div>
-
-        <div class="about-content">
-
-            <p>
-                Hi, I’m Katie — but online,
-                most people know me as Jae.
-            </p>
-
-            <p>
-                I’m an aspiring author,
-                creative storyteller,
-                gamer, motorsport enthusiast,
-                and someone deeply fascinated by
-                technology, aesthetics,
-                worldbuilding, and adventure.
-            </p>
-
-            <p>
-                Jae HQ is my personal corner
-                of the internet where all of my
-                passions collide.
-            </p>
+            </div>
 
         </div>
 
     </section>
 
     <!-- ========================= -->
-    <!-- FEATURED SECTION -->
+    <!-- FEATURED -->
     <!-- ========================= -->
 
-    <section class="featured-section">
+    <section class="split-section">
+
+        <div class="split-image">
+
+            <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?q=80&w=1200&auto=format&fit=crop"
+                 alt="Cyber aesthetic">
+
+        </div>
+
+        <div class="split-content">
+
+            <p class="section-mini-title">
+                THE WORLD OF JAE HQ
+            </p>
+
+            <h2>
+                Creativity Meets Technology
+            </h2>
+
+            <p>
+
+                Jae HQ is more than a website.
+                It’s a growing digital universe
+                combining books, blogs,
+                worldbuilding, aesthetics,
+                travel and futuristic systems.
+
+            </p>
+
+            <a href="blog.html">
+
+                <button>
+                    Start Exploring
+                </button>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- FEATURE GRID -->
+    <!-- ========================= -->
+
+    <section class="feature-section">
 
         <div class="section-title">
-            <h2>Explore My World</h2>
+
+            <h2>
+                Explore The Universe
+            </h2>
+
             <p>
-                Dive into different parts
-                of the Dreamscape.
+                Different dimensions of the Dreamscape.
             </p>
+
         </div>
 
         <div class="feature-grid">
 
             <div class="feature-card">
-                <h3>📚 Books</h3>
+
+                <div class="feature-icon">
+                    📚
+                </div>
+
+                <h3>Books</h3>
+
                 <p>
-                    Original stories,
-                    worlds, characters,
-                    and future projects.
+                    Original worlds,
+                    stories and future projects.
                 </p>
-                <a href="books.html">
-                    Discover Stories →
-                </a>
+
             </div>
 
             <div class="feature-card">
-                <h3>📝 Blog</h3>
+
+                <div class="feature-icon">
+                    📝
+                </div>
+
+                <h3>Blog</h3>
+
                 <p>
-                    Thoughts, updates,
-                    life reflections,
-                    creativity and ideas.
+                    Thoughts, creativity,
+                    updates and ideas.
                 </p>
-                <a href="blog.html">
-                    Read Blog →
-                </a>
+
             </div>
 
             <div class="feature-card">
-                <h3>🎥 YouTube</h3>
+
+                <div class="feature-icon">
+                    🎥
+                </div>
+
+                <h3>Content</h3>
+
                 <p>
-                    Creative content,
-                    aesthetics, gaming,
-                    travel and more.
+                    Gaming, aesthetics,
+                    creative videos and more.
                 </p>
-                <a href="youtube.html">
-                    Watch Videos →
-                </a>
+
             </div>
 
             <div class="feature-card">
-                <h3>✈️ Travel</h3>
+
+                <div class="feature-icon">
+                    ✈️
+                </div>
+
+                <h3>Travel</h3>
+
                 <p>
-                    Adventures,
-                    photography,
-                    places and memories.
+                    Adventures, memories,
+                    photos and experiences.
                 </p>
-                <a href="travel.html">
-                    Explore Travels →
-                </a>
+
             </div>
 
         </div>
@@ -239,49 +278,60 @@
     </section>
 
     <!-- ========================= -->
-    <!-- QUOTE SECTION -->
+    <!-- QUOTE -->
     <!-- ========================= -->
 
     <section class="quote-section">
 
         <blockquote>
+
             “Every creator builds
             a universe from fragments
-            of their imagination.”
+            of imagination.”
+
         </blockquote>
 
     </section>
 
     <!-- ========================= -->
-    <!-- COMMUNITY SECTION -->
+    <!-- CTA -->
     <!-- ========================= -->
 
-    <section class="community-section">
+    <section class="cta-section">
 
-        <div class="section-title">
+        <div class="cta-card">
 
-            <h2>Join The Community</h2>
+            <h2>
+                Join The Dreamscape
+            </h2>
 
             <p>
-                Become part of the journey
-                and grow with the Dreamscape.
+
+                Create your account
+                and become part of
+                the journey.
+
             </p>
 
-        </div>
+            <div class="hero-buttons">
 
-        <div class="community-buttons">
+                <a href="signup.html">
 
-            <a href="signup.html">
-                <button>
-                    Create Account
-                </button>
-            </a>
+                    <button>
+                        Create Account
+                    </button>
 
-            <a href="social.html">
-                <button class="secondary-button">
-                    Follow Socials
-                </button>
-            </a>
+                </a>
+
+                <a href="social.html">
+
+                    <button class="secondary-button">
+                        Follow Socials
+                    </button>
+
+                </a>
+
+            </div>
 
         </div>
 
@@ -294,17 +344,20 @@
     <footer>
 
         <p>
-            © 2026 Jae HQ —
-            Built with imagination ✨
+            © 2026 JAE HQ —
+            Built inside the Dreamscape ✨
         </p>
 
     </footer>
 
-    <!-- FIREBASE SCRIPTS -->
+    <!-- ========================= -->
+    <!-- FIREBASE -->
+    <!-- ========================= -->
 
     <script type="module" src="firebase.js"></script>
     <script type="module" src="auth.js"></script>
     <script type="module" src="navbar.js"></script>
 
 </body>
+
 </html>
