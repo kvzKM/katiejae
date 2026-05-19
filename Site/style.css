@@ -234,81 +234,215 @@ button:hover {
 /* =========================================
    HERO SECTION
 ========================================= */
-.hero p {
-    font-size: 18px;
-    margin-top: 20px;
+/* =========================================
+   PROFESSIONAL HOME UPGRADE
+========================================= */
+
+.hero-grid,
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 140px;
 }
 
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
+.hero-left,
+.split-content {
+    text-align: left;
+}
 
-    min-height: 85vh;
+.hero-image-card,
+.split-image img {
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+
+    border: 1px solid var(--border-glow);
+
+    box-shadow:
+        0 0 40px rgba(68,233,255,0.12);
+}
+
+.hero-image-card img,
+.split-image img {
+    width: 100%;
+    display: block;
+}
+
+.section-mini-title {
+    color: var(--neon-blue);
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+
+    font-size: 13px;
+}
+
+.feature-section {
+    margin-bottom: 120px;
+}
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+    margin-top: 50px;
+}
+
+.feature-card {
+    padding: 35px;
+
+    border-radius: 28px;
+
+    background: var(--glass-bg);
+
+    border: 1px solid var(--border-glow);
+
+    backdrop-filter: blur(16px);
+
+    transition: 0.3s ease;
 
     text-align: left;
 }
 
-.hero-left {
-    flex: 1;
+.feature-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 30px rgba(68,233,255,0.15);
+
 }
 
-.hero-right {
-    flex: 1;
-
-    position: relative;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.feature-icon {
+    font-size: 42px;
+    margin-bottom: 20px;
 }
 
-.hero-image {
-    width: 100%;
-    max-width: 500px;
-
-    position: relative;
-    z-index: 2;
-
-    animation: floatHero 6s ease-in-out infinite;
+.quote-section {
+    margin-bottom: 120px;
 }
 
-.hero-orb {
-    position: absolute;
+blockquote {
+    font-size: 32px;
 
-    width: 350px;
-    height: 350px;
+    font-family: 'Orbitron', sans-serif;
+
+    line-height: 1.6;
+
+    color: var(--neon-blue);
+
+    text-shadow:
+        0 0 15px rgba(68,233,255,0.3);
+}
+
+.cta-section {
+    margin-bottom: 120px;
+}
+
+.cta-card {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 70px;
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(157,77,255,0.15),
+            rgba(68,233,255,0.08)
+        );
+
+    border:
+        1px solid var(--border-glow);
+
+    backdrop-filter:
+        blur(18px);
+}
+
+/* =========================================
+   GLOW ORBS
+========================================= */
+
+.glow-orb {
+    position: fixed;
 
     border-radius: 50%;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(68,233,255,0.35),
-            transparent 70%
-        );
+    filter: blur(90px);
 
-    filter: blur(40px);
+    opacity: 0.15;
 
-    z-index: 1;
+    z-index: -1;
 }
 
-@keyframes floatHero {
+.orb1 {
+    width: 300px;
+    height: 300px;
 
-    0% {
-        transform: translateY(0px);
+    background: var(--neon-blue);
+
+    top: 10%;
+    left: -100px;
+}
+
+.orb2 {
+    width: 350px;
+    height: 350px;
+
+    background: var(--neon-purple);
+
+    bottom: 10%;
+    right: -120px;
+}
+
+.orb3 {
+    width: 250px;
+    height: 250px;
+
+    background: var(--neon-pink);
+
+    top: 50%;
+    left: 40%;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .hero-grid,
+    .split-section {
+
+        grid-template-columns: 1fr;
+
     }
 
-    50% {
-        transform: translateY(-20px);
+    .hero-left,
+    .split-content {
+
+        text-align: center;
+
     }
 
-    100% {
-        transform: translateY(0px);
+    blockquote {
+
+        font-size: 24px;
+
     }
 
 }
+
 /* =========================================
    CONTROLS
 ========================================= */
