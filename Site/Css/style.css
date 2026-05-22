@@ -5,24 +5,24 @@
    Clean master stylesheet
 ===================================================== */
 :root {
-    --bg-dark: #080808;
-    --bg-secondary: #141010;
-    --bg-panel: rgba(255, 255, 255, 0.055);
+    --bg-dark: #070707;
+    --bg-secondary: #111111;
+    --bg-panel: rgba(255, 255, 255, 0.05);
 
-    --neon-blue: #d9d6cf;
-    --neon-pink: #c1121f;
-    --neon-purple: #780000;
-    --neon-red: #e5383b;
-    --neon-gold: #f5cb5c;
+    --neon-blue: #d6d6d6;
+    --neon-pink: #b11226;
+    --neon-purple: #2b2b2b;
+    --neon-red: #d90429;
+    --neon-gold: #c9a227;
 
-    --text-main: #f8f5ef;
-    --text-soft: #b8b0a6;
+    --text-main: #f4f4f4;
+    --text-soft: #a7a7a7;
 
-    --border-glow: rgba(245, 203, 92, 0.22);
-    --border-hot: rgba(229, 56, 59, 0.34);
+    --border-glow: rgba(201, 162, 39, 0.25);
+    --border-hot: rgba(217, 4, 41, 0.30);
 
-    --shadow-blue: 0 0 35px rgba(245, 203, 92, 0.12);
-    --shadow-pink: 0 0 35px rgba(229, 56, 59, 0.18);
+    --shadow-blue: 0 0 35px rgba(201, 162, 39, 0.12);
+    --shadow-pink: 0 0 35px rgba(217, 4, 41, 0.15);
 }
 /* =====================================================
    GLOBAL RESET
@@ -49,9 +49,9 @@ body {
 }
 body {
     background:
-        radial-gradient(circle at top left, rgba(193, 18, 31, 0.20), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(245, 203, 92, 0.08), transparent 28%),
-        linear-gradient(180deg, #080808 0%, #141010 50%, #080808 100%);
+        radial-gradient(circle at top left, rgba(201, 162, 39, 0.10), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(217, 4, 41, 0.12), transparent 30%),
+        linear-gradient(180deg, #070707 0%, #111111 48%, #070707 100%);
 }
 
 body::before {
