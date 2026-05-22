@@ -6,30 +6,29 @@
 ===================================================== */
 
 :root {
-    --bg-dark: #05060a;
-    --bg-secondary: #0b0f1a;
+    --bg-dark: #03040a;
+    --bg-secondary: #080d18;
     --bg-panel: rgba(255, 255, 255, 0.055);
 
-    --neon-blue: #38e8ff;
-    --neon-pink: #ff2ec4;
-    --neon-purple: #8b5cff;
-    --neon-red: #ff304f;
-    --neon-gold: #f7c948;
+    --neon-blue: #00e5ff;
+    --neon-pink: #ff2bd6;
+    --neon-purple: #7a3cff;
+    --neon-red: #ff1744;
+    --neon-gold: #ffd166;
 
-    --text-main: #f6f7fb;
-    --text-soft: #9aa4bd;
+    --text-main: #f7f8ff;
+    --text-soft: #9aa7c7;
 
-    --border-glow: rgba(56, 232, 255, 0.22);
-    --border-hot: rgba(255, 46, 196, 0.28);
+    --border-glow: rgba(0, 229, 255, 0.24);
+    --border-hot: rgba(255, 43, 214, 0.28);
 
-    --shadow-blue: 0 0 35px rgba(56, 232, 255, 0.16);
-    --shadow-pink: 0 0 35px rgba(255, 46, 196, 0.16);
+    --shadow-blue: 0 0 35px rgba(0, 229, 255, 0.16);
+    --shadow-pink: 0 0 35px rgba(255, 43, 214, 0.16);
 
     --radius-large: 30px;
     --radius-medium: 20px;
     --radius-small: 12px;
 }
-
 /* =====================================================
    GLOBAL RESET
 ===================================================== */
